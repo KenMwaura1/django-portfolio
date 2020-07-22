@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+from dotenv import load_dotenv
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,8 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#create a .env file and set a secret key, ensure you dont commit your .env file
-SECRET_KEY = os.getenv('SECRET_KEY')
+# create a .env file and set a secret key, ensure you dont commit your .env file
+# SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = load_dotenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -132,7 +133,7 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "dashboard"
-#For test purposes using the smtp lib 
+#For test purposes using the smtpd lib
 EMAIL_HOST = "127.0.0.1"
 EMAIL_PORT = 1025
 
