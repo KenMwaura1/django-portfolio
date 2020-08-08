@@ -2,10 +2,14 @@
 
 {% block page_content %}
 <h2> Register </h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Register">
-</form>
-<a href="{% url 'login' %}"> Back to Login </a>
+<div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input class="btn-rounded btn-success" type="submit" value="Register">
+    </form>
+</div>
+<div class="form-group">
+    <a href="{% url 'login' %}"> Back to Login </a>
+</div>
 {% endblock %}

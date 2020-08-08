@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 {% block page_content %}
 <h2> Login </h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Login" class="btn btn-rounded btn-success">
-</form>
-
-<a class="btn btn-rounded btn-info" href="{% url 'dashboard' %}"> Back to dashboard </a>
-<a class="btn btn-rounded btn-outline-black" href="{% url 'password_reset' %}"> Reset password </a>
-<a class="btn btn-rounded btn-floatings btn-secondary " href="{% url 'register' %}"> Register</a>
+<div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login" class="btn btn-rounded btn-success">
+    </form>
+</div>
+<div class="form-group">
+    <a class="btn btn-rounded btn-info" href="{% url 'dashboard' %}"> Back to dashboard </a>
+    <a class="btn btn-rounded btn-outline-black" href="{% url 'password_reset' %}"> Reset password </a>
+    <a class="btn btn-rounded btn-floatings btn-secondary " href="{% url 'register' %}"> Register</a>
+</div>
 {% endblock %}
